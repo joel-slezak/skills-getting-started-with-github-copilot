@@ -3,46 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
+    <title>Math Game</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <h1>Math Game</h1>
+      <h2>Practice addition and subtraction</h2>
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+      <section id="game-container">
+        <h3>Solve the problem</h3>
+        <p class="game-description">
+          Choose a skill, answer each question, and build your score.
+        </p>
+        <div class="scoreboard">
+          <p><strong>Score:</strong> <span id="score">0</span></p>
+          <p><strong>Questions:</strong> <span id="question-count">0</span></p>
         </div>
-      </section>
-
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+        <form id="game-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
+            <label for="operation">Operation:</label>
+            <select id="operation" required>
+              <option value="addition">Addition</option>
+              <option value="subtraction">Subtraction</option>
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <div class="form-group">
+            <label for="problem">Problem:</label>
+            <p id="problem" class="problem-display" aria-live="polite"></p>
+          </div>
+          <div class="form-group">
+            <label for="answer">Your Answer:</label>
+            <input type="number" id="answer" required placeholder="Type your answer" />
+          </div>
+          <div class="button-group">
+            <button type="submit">Check Answer</button>
+            <button type="button" id="new-problem">New Problem</button>
+          </div>
         </form>
         <div id="message" class="hidden"></div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2023 Mergington High School</p>
+      <p>&copy; 2026 Math Practice</p>
     </footer>
 
     <script src="app.js"></script>
